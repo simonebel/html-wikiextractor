@@ -12,6 +12,36 @@ Since October 2023 Wikimedia has released a new category of [wikipedia dumps in 
 
 ### Usage
 
+```
+usage: Extract and write to disk table and infobox from a HTML wikipedia dumps
+       [-h] [--include_table] [--include_list] [--json] [--html] [--stdout]
+       [--dev DEV]
+       input_file
+
+positional arguments:
+  input_file       The input HTML dump.
+
+optional arguments:
+  -h, --help       show this help message and exit
+
+Output:
+  Arguments related to output.
+
+  --include_table  Whether to include the tables or not.
+  --include_list   Whether to include the lists or not.
+  --json           Whether to write the articles on disk in JSON
+  --html           Whether to write the articles on disk in HTML
+  --stdout         Whether to redirect the article to the stdout
+
+Dev:
+  Arguments related to debug this script
+
+  --dev DEV        Whether to run this script in dev mode. This argument
+                   expect an int which will be the size of the number of
+                   articles to parse
+
+```
+
 ## HTML dumps
 
 <!-- Add typology of html dumps -->
