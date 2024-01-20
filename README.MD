@@ -4,7 +4,7 @@ This repository aims to extract and cleans articles from a wikipedia HTML dump.
 
 ## Introduction
 
-Since October 2023 Wikimedia has released a new category of [wikipedia dumps in HTML](https://dumps.wikimedia.org/other/enterprise_html/runs/). Unlike the XML dumps, the wikitext has been already been transclude, making it easier to parse the dumps and making possible to extract infoboxes from a wiki.
+Since October 2023 Wikimedia has released a new category of [wikipedia dumps in HTML](https://dumps.wikimedia.org/other/enterprise_html/runs/). Unlike the XML dumps, the wikitext has already been transclude, making it easier to parse the dumps and making possible to extract infoboxes from a wiki.
 
 ## Getting Started
 
@@ -33,3 +33,4 @@ But :
 
 - Add rotating output writer
 - Test and dev sets
+- Install from pypi + source
