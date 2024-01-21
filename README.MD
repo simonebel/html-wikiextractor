@@ -63,15 +63,27 @@ The dumps are available :
 
 ### Download HTML dumps
 
-You can either download from the [source page](https://dumps.wikimedia.org/other/enterprise_html/runs/) or using the command:
+You can either download from the [source page](https://dumps.wikimedia.org/other/enterprise_html/runs/) or using the command `python3 -m download_dump`:
 
 ```
+usage: Download a Wikipedia dump from https://dumps.wikimedia.org/other/enterprise_html/runs/
+       [-h] --lang LANG [--namespace {0,6,10}] output
 
+positional arguments:
+  output                The output directory.
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Output:
+  Arguments related to output.
+
+  --lang LANG, -l LANG  Which language to dowload the dump for
+  --namespace {0,6,10}, -ns {0,6,10}
+                        Which namespace to dowload the dump for
 ```
 
 e.g `frwiki-NS0-20240120-ENTERPRISE-HTML.json.tar.gz` for the french dump of the wikipedia articles
-
-<!-- Add typology of html dumps -->
 
 ## Advantages and Limitations
 
@@ -90,6 +102,5 @@ But :
 
 ## TODO
 
-- Add rotating output writer
 - Test and dev sets
 - Install from pypi + source
