@@ -24,19 +24,20 @@ class NavigableTree:
     Base interface for navigating a wikipedia article in DFO order while preserving the order of sections
     """
 
-    def __init__(self) -> None:
-        self.root = Node()
+    def __init__(self, root: Node = Node()) -> None:
+        self.root = root
 
-    def _reach_last(self) -> Node:
+    @staticmethod
+    def _reach_last(node: Node) -> Node:
         """
         Reach the last node of the tree.
         """
-        node = self.root
         while node.next != None:
             node = node.next
 
         return node
 
+    @classmethod
     def build(cls, text: str) -> None:
         """
         Build a navigable tree from an HTML file content.
@@ -45,11 +46,12 @@ class NavigableTree:
         _id = 0
         visited = [(_id, _id, html)]
 
+        tree = Node()
         while len(visited) > 0:
             current_id, child_of, current_tag = visited.pop(0)
-            cls._reach_last().next = Node(
-                prev=cls._reach_last(), next=None, content=current_tag, id=_id
-            )
+            last = cls._reach_last(tree)
+
+            last.next = Node(prev=last, next=None, content=current_tag, id=_id)
 
             sections = []
             for tag in current_tag:
@@ -58,6 +60,8 @@ class NavigableTree:
                     sections.append((_id, current_id, tag))
 
             visited = sections + visited
+
+        return cls(root=tree)
 
     def __next__(self):
         if self.current.next == None:

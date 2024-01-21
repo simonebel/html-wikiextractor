@@ -1,5 +1,55 @@
+from argparse import ArgumentParser
+
 if __name__ == "__main__":
-    pass
+    parser = ArgumentParser(
+        "Download a Wikipedia dump from https://dumps.wikimedia.org/other/enterprise_html/runs/",
+    )
+
+    parser.add_argument("outpout", help="The output directory.")
+
+    output_group = parser.add_argument_group(
+        title="Output", description="Arguments related to output."
+    )
+    output_group.add_argument(
+        "--latest",
+        default=True,
+        action="store_true",
+        help="Whether to download the latest dump.",
+    )
+    output_group.add_argument(
+        "--include_list",
+        default=False,
+        action="store_true",
+        help="Whether to include the lists or not.",
+    )
+    output_group.add_argument(
+        "--json",
+        default=True,
+        action="store_true",
+        help="Whether to write the articles on disk in JSON",
+    )
+    output_group.add_argument(
+        "--html",
+        default=False,
+        action="store_true",
+        help="Whether to write the articles on disk in HTML",
+    )
+    output_group.add_argument(
+        "--stdout",
+        default=False,
+        action="store_true",
+        help="Whether to redirect the article to the stdout",
+    )
+
+    dev_group = parser.add_argument_group(
+        title="Dev", description="Arguments related to debug this script"
+    )
+    dev_group.add_argument(
+        "--dev",
+        type=int,
+        help="Whether to run this script in dev mode. This argument expect an int which will be the size of the number of articles to parse",
+    )
+    args = parser.parse_args()
     # res = requests.get(
     #     "https://dumps.wikimedia.org/other/enterprise_html/runs/20240101/"
     # )
