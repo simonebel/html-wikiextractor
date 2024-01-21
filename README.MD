@@ -44,6 +44,8 @@ Dev:
 
 ## HTML dumps
 
+### What are html dumps ?
+
 HTML dumps are available to donwload [here](https://dumps.wikimedia.org/other/enterprise_html/runs/), two HTML dumps are added every months (at the start and the end of the month).
 
 The dumps are available :
@@ -59,7 +61,15 @@ The dumps are available :
   - wikiquote
   - wiktionnary
 
-e.g frwiki-NS0-20240120-ENTERPRISE-HTML.json.tar.gz for the french dump of the wikipedia articles
+### Download HTML dumps
+
+You can either download from the [source page](https://dumps.wikimedia.org/other/enterprise_html/runs/) or using the command:
+
+```
+
+```
+
+e.g `frwiki-NS0-20240120-ENTERPRISE-HTML.json.tar.gz` for the french dump of the wikipedia articles
 
 <!-- Add typology of html dumps -->
 
@@ -75,6 +85,8 @@ But :
 
 - The HTML dumps are larger than the XML dumps
 <!-- Include list of size -->
+
+<!-- ## Comparison with wikiextractor -->
 
 ## TODO
 
