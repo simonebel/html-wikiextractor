@@ -21,7 +21,7 @@ def report_download(
     report_period: int = 10000,
 ) -> None:
     """
-    Reportthe current progress of the download
+    Report the current progress of the download
     """
     current_size = (block_count * block_size) / (1024**3)
     total_size = total_size / (1024**3)
